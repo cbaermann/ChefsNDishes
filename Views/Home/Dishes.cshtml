@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Display Dishes</title>
+    </head>
+
+    <body>
+        @model DishesView
+        <h1><a href="/">Chefs</a>| Dishes</h1>
+        <a href="NewDish">Add a Dish</a>
+        <h3>Yum, take a look at our tasty dishes!</h3>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Chef</th>
+                <th>Tastiness</th>
+                <th>Calories</th>
+            </tr>
+            @{
+                @foreach(Dish dish in Model.Dishes)
+                {
+                    <tr>@dish.Name</tr>
+                    <tr>@dish.Creator.FirstName @dish.Creator.LastName</tr>
+                    <tr>@dish.Tastiness</tr>
+                    <tr>@dish.Calories</tr>
+                }
+            }
+        </table>
+
+        
+    </body>
+</html>
