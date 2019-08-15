@@ -18,14 +18,17 @@
             <th>Age </th>
             <th># of Dishes</th>
         </tr>
-        @{
-            @foreach(Chef chef in Model.Chefs)
-            {
-                <tr>@chef.FirstName @chef.LastName</tr>
-                <tr>@chef.BirthDate</tr>
-                <tr>@chef.CreatedDishes.Count</tr>
+        <tr>
+
+            @{
+                @foreach(Chef chef in Model.Chefs)
+                {
+                    <td>@chef.FirstName @chef.LastName</td>
+                    <td>@chef.BirthDate</td>
+                    <td>@chef.CreatedDishes.Count</td>
+                }
             }
-        }
+        </tr>
     </table>
     
 </body>

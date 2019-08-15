@@ -10,26 +10,26 @@
     <body>
         <a href="Dishes">Home</a>
         <h3>Add a Dish!</h3>
-        @model Dish
+        @model NewDishView
         <form asp-action="AddDish" asp-controller="Home" method="POST">
-            <span asp-validation-for="Name"></span>
-            <label asp-for="Name">Name of Dish: </label>
-            <input type="text" asp-for="Name">
+            <span asp-validation-for="newDish.Name"></span>
+            <label asp-for="newDish.Name">Name of Dish: </label>
+            <input type="text" asp-for="newDish.Name">
             <br>
 
-            <span asp-validation-for="Calories"></span>
-            <label asp-for="Calories"># of Calories: </label>
-            <input type="text" asp-for="Calories">
+            <span asp-validation-for="newDish.Calories"></span>
+            <label asp-for="newDish.Calories"># of Calories: </label>
+            <input type="text" asp-for="newDish.Calories">
             <br>
 
-            <span asp-validation-for="Creator"></span>
-            <label asp-for="Creator">Chef: </label>
-            <input type="text" asp-for="Creator">
+            <span asp-validation-for="newDish.Creator"></span>
+            <label asp-for="newDish.Creator">Chef: </label>
+            <input type="text" asp-for="newDish.Creator">
             <br>
 
-            <span asp-validation-for="Tastiness"></span>
-            <label asp-for="Tastiness">Tastiness: </label>
-            <select asp-for="Tastiness">
+            <span asp-validation-for="newDish.Tastiness"></span>
+            <label asp-for="newDish.Tastiness">Tastiness: </label>
+            <select asp-for="newDish.Tastiness">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -38,9 +38,9 @@
             </select>
             <br>
 
-            <span asp-validation-for="Description"></span>
-            <label asp-for="Description">Description: </label>
-            <input type="date" asp-for="Description">
+            <span asp-validation-for="newDish.Description"></span>
+            <label asp-for="newDish.Description">Description: </label>
+            <input type="date" asp-for="newDish.Description">
             <br>
             <input type="submit" value="Add Dish">
         </form>

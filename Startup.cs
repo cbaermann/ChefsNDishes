@@ -32,7 +32,7 @@ namespace ChefsDishes
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            string mySqlConnection = "server=localhost;userid=root;password=root;port=3306;database=mydb;SslMode=None";
+            string mySqlConnection = "server=localhost;userid=root;password=root;port=3306;database=ChefsDishes;SslMode=None";
             services.AddDbContext<MyContext>(options=> options.UseMySql(mySqlConnection));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

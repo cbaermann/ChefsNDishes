@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ChefsDishes.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20190814181917_first")]
-    partial class first
+    [Migration("20190815162157_First")]
+    partial class First
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

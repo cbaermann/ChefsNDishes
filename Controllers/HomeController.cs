@@ -51,7 +51,11 @@ namespace ChefsDishes.Controllers
         [HttpGet("Dishes")]
         public IActionResult Dishes ()
         {
-            return View("Dishes");
+            DishesView viewModel = new DishesView();
+            viewModel.Dishes = dbContext.Dishes
+                .Include(d=>d.Creator)
+                .ToList();
+            return View("Dishes", viewModel);
         }
 
        
@@ -59,11 +63,8 @@ namespace ChefsDishes.Controllers
         [HttpGet("NewDish")]
         public IActionResult NewDish()
         {
-            DishesView viewModel = new DishesView();
-            viewModel.Dishes = dbContext.Dishes
-            .Include(d=>d.Creator)
-            .ToList();
-
+            NewDishView viewModel = new NewDishView();
+            viewModel.Chefs = dbContext.Chefs.ToList();
             return View("NewDish", viewModel);
         }
 
